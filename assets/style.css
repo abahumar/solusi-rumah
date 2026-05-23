@@ -11,6 +11,7 @@ html {
 }
 
 body {
+  min-height: 100vh;           /* fallback for older browsers */
   min-height: 100dvh;
   background: #0a0a0a;
   display: flex;
@@ -89,6 +90,9 @@ body {
   border: none;
   border-radius: 50px;
   cursor: pointer;
+  text-decoration: none;       /* safe if rendered as <a> */
+  -webkit-appearance: none;    /* strip iOS default button chrome */
+  appearance: none;
   margin-bottom: 20px;
   box-shadow: 0 4px 20px rgba(233, 30, 140, 0.45);
   transition: transform 0.1s ease, box-shadow 0.1s ease;
