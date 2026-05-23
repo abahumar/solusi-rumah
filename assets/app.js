@@ -1,5 +1,6 @@
 (async function () {
   const app = document.getElementById('app');
+  if (!app) return; // guard: #app missing from DOM
 
   // ── Fetch config + products in parallel ───────────────
   let config, products;
@@ -92,6 +93,8 @@ function renderProduct(app, product) {
     '</div>';
 
   document.getElementById('cta-btn').addEventListener('click', function () {
+    // Guard against javascript: URIs in product data
+    if (!/^https?:\/\//i.test(product.target_url)) return;
     safePixel('track', 'Lead');
     window.location.href = product.target_url;
   });
