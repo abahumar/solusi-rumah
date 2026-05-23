@@ -1,3 +1,25 @@
+# OS
 .DS_Store
 Thumbs.db
+
+# Logs
 *.log
+
+# Node tooling (if introduced)
+node_modules/
+
+# Environment / secrets
+.env
+.env.*
+
+# Build output (if introduced)
+dist/
+build/
+
+# Editor metadata
+.vscode/
+.idea/
+
+# Project tooling (Claude Code harness)
+.claude/
+docs/
